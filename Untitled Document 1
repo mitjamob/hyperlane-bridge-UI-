@@ -1,0 +1,53 @@
+{
+  tokens: [
+    {
+      // The ChainName of the token
+      chainName: arbitrum ,
+      // See https://github.com/hyperlane-xyz/hyperlane-monorepo/blob/main/typescript/sdk/src/token/TokenStandard.ts
+      standard: TokenStandard.EvmHypCollateral,
+      // The token metadata (decimals, symbol, name)
+      decimals: 6,
+      symbol: 'USDT',
+      name: 'Tether USD',
+      // The router address
+      addressOrDenom: '"0xb1D8278B3747866d7d67C41e7736ee674fdaa32A",
+      // The address of the underlying collateral token
+      collateralAddress: "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+      // A path to a token logo image
+      logoURI: '/logos/usdt.png',
+      // The list of tokens this one is connected to
+      connections: [ { token: 'ethereum|optimism|0x72E51AcbE7bEff76d4273010a1470753FaD4Bd67 } ]
+    },
+    {
+      chainName: 'optimism',
+      standard: TokenStandard.EvmHypSynthetic,
+      decimals: 6,
+      symbol: 'USDT',
+      name: 'Theter Coin',
+      addressOrDenom: '0x72E51AcbE7bEff76d4273010a1470753FaD4Bd67',
+      logoURI: '/logos/usdt.png',
+      connections: [ { token: 'ethereum|arbitrum|0xb1D8278B3747866d7d67C41e7736ee674fdaa32A' } ]
+    }
+  ]
+}
+
+
+
+tokens:
+      - chainName: arbitrum
+        standard: EvmHypCollateral
+        decimals: 6
+        symbol: USDT
+        name: Tether USD
+        addressOrDenom: "0xb1D8278B3747866d7d67C41e7736ee674fdaa32A"
+        collateralAddressOrDenom: "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9"
+        connections:
+          - token: ethereum|optimism|0x72E51AcbE7bEff76d4273010a1470753FaD4Bd67
+      - chainName: optimism
+        standard: EvmHypSynthetic
+        decimals: 6
+        symbol: USDT
+        name: Tether USD
+        addressOrDenom: "0x72E51AcbE7bEff76d4273010a1470753FaD4Bd67"
+        connections:
+          - token: ethereum|arbitrum|0xb1D8278B3747866d7d67C41e7736ee674fdaa32A
